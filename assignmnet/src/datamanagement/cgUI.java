@@ -19,6 +19,7 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 	Integer sid;
 
 	public cgUI(cgCTL ctl) {
+		getContentPane().setForeground(Color.ORANGE);
 		this.ctl = ctl;
 		uM = new javax.swing.DefaultComboBoxModel(new String[0]);
 		rM = new javax.swing.DefaultComboBoxModel(new String[0]);
@@ -40,6 +41,7 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 		jLabel1 = new javax.swing.JLabel();
 		jPanel1 = new javax.swing.JPanel();
 		jComboBox1 = new javax.swing.JComboBox();
+		jComboBox1.setForeground(Color.GREEN);
 		jPanel2 = new javax.swing.JPanel();
 		jComboBox2 = new javax.swing.JComboBox();
 		jPanel3 = new javax.swing.JPanel();
@@ -240,6 +242,7 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 		jlabel6.setForeground(Color.RED);
 		jlabel6.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		jButton3 = new javax.swing.JButton();
+		jButton3.setForeground(Color.ORANGE);
 		
 				jButton3.setText("Save");
 				jButton3.addActionListener(new java.awt.event.ActionListener() {

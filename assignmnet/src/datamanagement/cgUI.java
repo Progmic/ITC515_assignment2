@@ -7,6 +7,10 @@ import java.awt.Font;
 import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.Button;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class cgUI extends javax.swing.JFrame implements IUnitLister,
 		IStudentLister {
@@ -19,6 +23,8 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 	Integer sid;
 
 	public cgUI(cgCTL ctl) {
+		getContentPane().setBackground(Color.MAGENTA);
+		setForeground(Color.CYAN);
 		getContentPane().setForeground(Color.ORANGE);
 		this.ctl = ctl;
 		uM = new javax.swing.DefaultComboBoxModel(new String[0]);
@@ -41,6 +47,7 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 		jLabel1 = new javax.swing.JLabel();
 		jPanel1 = new javax.swing.JPanel();
 		jComboBox1 = new javax.swing.JComboBox();
+		jComboBox1.setBackground(Color.PINK);
 		jComboBox1.setForeground(Color.GREEN);
 		jPanel2 = new javax.swing.JPanel();
 		jComboBox2 = new javax.swing.JComboBox();
@@ -250,6 +257,12 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 						jButton2ActionPerformed(evt);
 					}
 				});
+		
+		JButton btnNewButton = new JButton("Add Student");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(
 				getContentPane());
@@ -272,11 +285,14 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 									.addComponent(jPanel4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
 						.addGroup(layout.createSequentialGroup()
 							.addGap(157)
-							.addComponent(jLabel1))
-						.addGroup(layout.createSequentialGroup()
-							.addGap(165)
-							.addComponent(jButton3, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE)))
+							.addComponent(jLabel1)))
 					.addContainerGap())
+				.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
+					.addGap(44)
+					.addComponent(btnNewButton)
+					.addPreferredGap(ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
+					.addComponent(jButton3, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE)
+					.addGap(80))
 		);
 		layout.setVerticalGroup(
 			layout.createParallelGroup(Alignment.LEADING)
@@ -292,9 +308,11 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 						.addComponent(jPanel4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addComponent(jPanel3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(jButton3)
+						.addComponent(btnNewButton))
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(jButton3)
-					.addGap(11)
 					.addComponent(jlabel6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
